@@ -17,8 +17,8 @@ Following this tutorial: https://resources.github.com/github-and-rstudio/
 ## Switching branch
 
 In the terminal window in R: 
-```{}
 
+```{}
 # Find out what branch you are on:
  git status
  
@@ -27,5 +27,35 @@ git status new-branch
 
 # Move to that branch
 git checkout new-branch
+
+```
+
+## Checking the status of your changed files
+
+```{}
+# Check the status of your branch 
+git status new-branch 
+
+# Happy with the changes and want to stage them?
+git add .
+
+
+```
+
+## Commiting changes from the terminal
+
+```{}
+# Make a new commit
+git commit -m "<COMMIT-MESSAGE>"
+
+# Find out about previous commits
+git log --oneline
+```
+
+## Making the change this branch was designed for!: 
+
+```{r, results='hide'}
+
+plot(mtcars$mpg~mtcars$cyl)
 
 ```

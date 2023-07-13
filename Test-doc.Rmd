@@ -64,7 +64,7 @@ plot(mtcars$mpg~mtcars$cyl)
 
 ```
 
-# Now to merge with the main branch 
+## Now to merge with the main branch 
 
 ```{}
 # run
@@ -72,3 +72,20 @@ git push -u origin new-branch
 
 ```
 Now over to **github** to raise our branch as a pull request
+
+## Tidy up the local copy
+We made the merge on github fine, and deleted the new-branch branch, but as we are working on a local copy we need to now:
+1) Move back to the main branch
+2) Pull the changes from the main branch 
+3) Delete the now defunct new-branch
+
+```{}
+# Move to the main 
+git checkout main
+
+# Pull the changes
+git pull
+
+# delete the branch
+git branch -D new-branch
+```

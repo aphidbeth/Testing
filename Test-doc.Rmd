@@ -50,6 +50,10 @@ git commit -m "<COMMIT-MESSAGE>"
 
 # Find out about previous commits
 git log --oneline
+
+# We can see changes between our branch and the main using
+git diff --stat --summary main..new-branch
+
 ```
 
 ## Making the change this branch was designed for!: 
@@ -59,3 +63,12 @@ git log --oneline
 plot(mtcars$mpg~mtcars$cyl)
 
 ```
+
+# Now to merge with the main branch 
+
+```{}
+# run
+git push -u origin new-branch
+
+```
+Now over to **github** to raise our branch as a pull request

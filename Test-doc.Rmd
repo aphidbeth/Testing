@@ -1,5 +1,5 @@
 ---
-title: "Test-doc"
+# title: "Test-doc"
 author: "BM"
 date: "2023-07-13"
 output: html_document
@@ -9,22 +9,66 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Learning how to use github with R 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Following this tutorial: https://resources.github.com/github-and-rstudio/
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+## Switching branch
+
+In the terminal window in R: 
+
+```{}
+# Find out what branch you are on:
+ git status
+ 
+# Create a new branch
+git status new-branch
+
+# Move to that branch
+git checkout new-branch
+
 ```
 
-## Including Plots
+## Checking the status of your changed files
 
-You can also embed plots, for example:
+```{}
+# Check the status of your branch 
+git status new-branch 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+# Happy with the changes and want to stage them?
+git add .
+
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Commiting changes from the terminal
+
+```{}
+# Make a new commit
+git commit -m "<COMMIT-MESSAGE>"
+
+# Find out about previous commits
+git log --oneline
+
+# We can see changes between our branch and the main using
+git diff --stat --summary main..new-branch
+
+```
+
+## Making the change this branch was designed for!: 
+
+```{r, results='hide'}
+
+plot(mtcars$mpg~mtcars$cyl)
+
+```
+
+# Now to merge with the main branch 
+
+```{}
+# run
+git push -u origin new-branch
+
+```
+Now over to **github** to raise our branch as a pull request
